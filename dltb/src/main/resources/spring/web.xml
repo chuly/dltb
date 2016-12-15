@@ -16,7 +16,7 @@
 
 	<!-- <bean class="com.mangofactory.swagger.configuration.SpringSwaggerConfig" 
 		/> -->
-	<context:component-scan base-package="com.plus.server" />
+	<context:component-scan base-package="com.bbq.dltb" />
 	<mvc:default-servlet-handler />
 	<!-- FreeMarker环境配置 -->
 	<bean id="freemarkerConfig"
@@ -41,7 +41,8 @@
 		<property name="freemarkerVariables">
 			<map>
 <!-- 				<entry key="base_addr" value="http://127.0.0.1:8080"></entry> -->
-				<entry key="base_addr" value="http://www.biubiuq.online/dltb"></entry>
+<!-- 				<entry key="base_addr" value="http://www.biubiuq.online/dltb"></entry> -->
+				<entry key="base_addr" value="${base_addr}"></entry>
 			</map>
 		</property>
 	</bean>
@@ -69,6 +70,14 @@
 		<!-- 指定所上传文件的总大小不能超过200KB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
 		<!-- 不在这里限制了,后台各自进行限制了 <property name="maxUploadSize" value="2000000"/> -->
 	</bean>
+	
+<!-- 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+<!-- 		<property name="locations"> -->
+<!-- 			<list> -->
+<!-- 				<value>classpath*:/system.properties</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
 
 	<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
 		<property name="locations">
