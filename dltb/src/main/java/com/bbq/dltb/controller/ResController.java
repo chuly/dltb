@@ -26,6 +26,8 @@ public class ResController extends BaseController {
     	log.info("下载页面---resCode:"+resCode);
         ModelAndView mv = new ModelAndView("resdownload.ftl");
         model.addAttribute("resCode", resCode);
+        String resName = resService.getResName(resCode);
+        model.addAttribute("resName", resName);
         return mv;
     }
     

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bbq.dltb.dal.dao.AccessLogDAO">
+  <resultMap id="BaseResultMap" type="com.bbq.dltb.dal.model.AccessLog">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="access_date" jdbcType="TIMESTAMP" property="accessDate" />
+    <result column="res_uri" jdbcType="VARCHAR" property="resUri" />
+    <result column="param" jdbcType="VARCHAR" property="param" />
+    <result column="cost_time" jdbcType="INTEGER" property="costTime" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, ip, access_date, res_uri, param, cost_time, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_access_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByModel" parameterType="com.bbq.dltb.dal.model.AccessLog" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_access_log
+    <where>
+      <if test="id != null">
+        and id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="ip != null">
+        and ip = #{ip,jdbcType=VARCHAR}
+      </if>
+      <if test="accessDate != null">
+        and access_date = #{accessDate,jdbcType=TIMESTAMP}
+      </if>
+      <if test="resUri != null">
+        and res_uri = #{resUri,jdbcType=VARCHAR}
+      </if>
+      <if test="param != null">
+        and param = #{param,jdbcType=VARCHAR}
+      </if>
+      <if test="costTime != null">
+        and cost_time = #{costTime,jdbcType=INTEGER}
+      </if>
+      <if test="remark != null">
+        and remark = #{remark,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+  <select id="selectByModelLike" parameterType="com.bbq.dltb.dal.model.AccessLog" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_access_log
+    <where>
+      <if test="id != null">
+        and id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="ip != null">
+        and ip like CONCAT('%',#{ip,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="accessDate != null">
+        and access_date = #{accessDate,jdbcType=TIMESTAMP}
+      </if>
+      <if test="resUri != null">
+        and res_uri like CONCAT('%',#{resUri,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="param != null">
+        and param like CONCAT('%',#{param,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="costTime != null">
+        and cost_time = #{costTime,jdbcType=INTEGER}
+      </if>
+      <if test="remark != null">
+        and remark like CONCAT('%',#{remark,jdbcType=VARCHAR},'%')
+      </if>
+    </where>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_access_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.bbq.dltb.dal.model.AccessLog" useGeneratedKeys="true">
+    insert into t_access_log (id, ip, access_date, 
+      res_uri, param, cost_time, 
+      remark)
+    values (#{id,jdbcType=BIGINT}, #{ip,jdbcType=VARCHAR}, #{accessDate,jdbcType=TIMESTAMP}, 
+      #{resUri,jdbcType=VARCHAR}, #{param,jdbcType=VARCHAR}, #{costTime,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.bbq.dltb.dal.model.AccessLog" useGeneratedKeys="true">
+    insert into t_access_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="accessDate != null">
+        access_date,
+      </if>
+      <if test="resUri != null">
+        res_uri,
+      </if>
+      <if test="param != null">
+        param,
+      </if>
+      <if test="costTime != null">
+        cost_time,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="accessDate != null">
+        #{accessDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resUri != null">
+        #{resUri,jdbcType=VARCHAR},
+      </if>
+      <if test="param != null">
+        #{param,jdbcType=VARCHAR},
+      </if>
+      <if test="costTime != null">
+        #{costTime,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bbq.dltb.dal.model.AccessLog">
+    update t_access_log
+    <set>
+      <if test="ip != null">
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="accessDate != null">
+        access_date = #{accessDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resUri != null">
+        res_uri = #{resUri,jdbcType=VARCHAR},
+      </if>
+      <if test="param != null">
+        param = #{param,jdbcType=VARCHAR},
+      </if>
+      <if test="costTime != null">
+        cost_time = #{costTime,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bbq.dltb.dal.model.AccessLog">
+    update t_access_log
+    set ip = #{ip,jdbcType=VARCHAR},
+      access_date = #{accessDate,jdbcType=TIMESTAMP},
+      res_uri = #{resUri,jdbcType=VARCHAR},
+      param = #{param,jdbcType=VARCHAR},
+      cost_time = #{costTime,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="deleteLogicByIds">
+    update t_access_log set deleteFlag = #{deleteFlag,jdbcType=INTEGER} where id in  <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">#{item}</foreach> 
+  </update>
+</mapper>

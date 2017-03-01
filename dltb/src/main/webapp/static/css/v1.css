@@ -1,0 +1,258 @@
+/* VIEWPORT */
+* {
+  outline: none;
+}
+input.form-control {
+  border-radius: 0 !important;
+}
+.btn {
+  border-radius: 0 !important;
+}
+.btn-primary {
+  color: #fff;
+  background: #bd081c;
+  border: 1px solid #bd081c;
+}
+.btn-primary:hover {
+  background: #840807;
+  border: 1px solid #840807;
+}
+.form-control:focus {
+  border-color: #bd081c;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(64, 112, 145, 0.3);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(238, 12, 10, 0.11);
+}
+.mt-20 {
+  margin-top: 20px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 120px;
+}
+.footer {
+  background: #f4f4f4;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  z-index: -1;
+}
+.footer ul {
+  margin: 0.5em 0 1em 0;
+  padding: 0;
+}
+.footer ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+h1#home-logo {
+  margin: 40px 0 30px 0;
+}
+h1#home-logo img {
+  display: block;
+  margin: 0 auto;
+  width: 128px;
+}
+h1#home-logo span {
+  display: block;
+  margin: 20px 0;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  h1#home-logo {
+    font-size: 20px;
+  }
+  h1#home-logo img {
+    display: inline-block;
+    width: 64px;
+  }
+  h1#home-logo span {
+    display: inline-block;
+  }
+}
+.love_1 {
+  text-align: right;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .love_1 {
+    display: block;
+  }
+  .love_1 img {
+    display: block;
+    width: 100%;
+  }
+}
+.love_2 {
+  text-align: left;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .love_2 {
+    margin-top: 15px;
+    display: block;
+  }
+  .love_2 img {
+    display: block;
+    width: 100%;
+  }
+}
+.love_3 {
+  text-align: center;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .love_3 img {
+    width: 100%;
+  }
+}
+.home-tags span,
+.home-tags button {
+  font-size: 12px;
+  margin-bottom: 5px;
+  display: inline-block;
+  padding: 4px 8px;
+  border: none;
+}
+.home-tags a {
+  text-decoration: none;
+}
+h1#sub-logo {
+  margin: 20px 0 20px 0;
+  font-size: 28px;
+}
+h1#sub-logo img {
+  margin: 0 auto;
+  width: 42px;
+}
+h1#sub-logo span {
+  margin: 20px 0;
+}
+h1#sub-logo a {
+  color: #333;
+}
+h1#sub-logo a:hover {
+  color: #333;
+  text-decoration: none;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  h1#sub-logo {
+    margin: 10px 0 10px 0;
+    font-size: 20px;
+    text-align: left;
+  }
+  h1#sub-logo img {
+    display: inline-block;
+    width: 32px;
+  }
+  h1#sub-logo span {
+    display: inline-block;
+    margin: 10px 0;
+  }
+}
+.result {
+  margin-top: 2em;
+}
+.result ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.result ul li {
+  position: relative;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+}
+.result ul li span {
+  position: absolute;
+  left: 0;
+  margin-left: -6em;
+  width: 5em;
+  text-align: right;
+  font-size: 14px;
+  color: #aaa;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .result ul li span {
+    margin-left: -5.5em;
+  }
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .result ul li span {
+    display: none;
+  }
+}
+.result ul li h2 {
+  font-size: 20px;
+  font-weight: 400;
+}
+.result ul li h2 a {
+  color: #bd081c;
+}
+.result ul li h2 a:hover {
+  color: #bd081c;
+}
+.search_related {
+  font-size: 16px;
+}
+.search_related a {
+  color: #bd081c;
+  margin: 5px 0;
+  display: inline-block;
+}
+.search_related a:hover {
+  color: #bd081c;
+}
+.pager a {
+  color: #bd081c;
+  border: 1px solid #bd081c !important;
+  border-radius: 0 !important;
+}
+.pager a:hover {
+  background: #bd081c !important;
+  color: #fff;
+  border: 1px solid #840807;
+}
+.pager .disabled a {
+  border: 1px solid #ccc !important;
+}
+.pager .disabled a:hover {
+  background: #fff !important;
+}
+.autocomplete-suggestions {
+  border: 1px solid #999;
+  background: #FFF;
+  cursor: default;
+  overflow: auto;
+  -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+  -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+  box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+}
+.autocomplete-suggestion {
+  padding: 2px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.autocomplete-no-suggestion {
+  padding: 2px 5px;
+}
+.autocomplete-selected {
+  background: #F0F0F0;
+}
+.autocomplete-suggestions strong {
+  font-weight: bold;
+  color: #000;
+}
+.autocomplete-group {
+  padding: 2px 5px;
+}
+.autocomplete-group strong {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  display: block;
+  border-bottom: 1px solid #000;
+}

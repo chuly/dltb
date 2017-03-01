@@ -123,7 +123,7 @@
 	<logger name="com.plus.server" level="INFO" />
 
 	<!-- root级别 WARN -->
-	<root level="info">
+	<root level="debug">
 		<appender-ref ref="CONSOLE" />
 		<!-- 异步文件输出 -->
 		<appender-ref ref="INFO_ASYNC" />

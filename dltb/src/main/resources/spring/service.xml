@@ -13,12 +13,12 @@
 						">
 
 	<!-- swagger配置 -->
-	<bean class="com.mangofactory.swagger.configuration.SpringSwaggerConfig" />
+<!-- 	<bean class="com.mangofactory.swagger.configuration.SpringSwaggerConfig" /> -->
 
 	<!-- 定义扫描根路径为com.exingcai.wms.service，使用默认的扫描方式。
 		使用注解一般都会配置扫描包路径选项，也包含了自动注入上述processor的功能，
 		因此当使用<context:component-scan/>后，就可以将<context:annotation-config/>移除 -->
-	<context:component-scan base-package="com.plus.server.service" />
+	<context:component-scan base-package="com.bbq.dltb" />
 	
 	<!-- 事务管理器 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

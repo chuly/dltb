@@ -9,7 +9,7 @@ body{ text-align:center}
 </style> 
 <body>
 <div id="main">
-	<input type="button" id="ida"  onclick="javascript:downloadRes();" value="点击下载《2600款促销水印》" />
+	<input type="button" id="ida"  onclick="javascript:downloadRes();" value="点击下载《${resName}》" />
 </div>
 
 </body>
