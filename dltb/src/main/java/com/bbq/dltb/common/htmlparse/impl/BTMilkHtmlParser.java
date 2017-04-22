@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import com.alibaba.fastjson.JSON;
 import com.bbq.dltb.common.htmlparse.CiliSiteType;
 import com.bbq.dltb.common.htmlparse.HtmlParser;
+import com.bbq.dltb.common.htmlparse.bean.DetailFile;
 import com.bbq.dltb.common.htmlparse.bean.Magnet;
 import com.bbq.dltb.common.htmlparse.bean.MagnetDetail;
 import com.bbq.dltb.common.htmlparse.bean.MagnetUl;
@@ -27,6 +28,8 @@ import com.google.common.collect.Lists;
  */
 public class BTMilkHtmlParser implements HtmlParser{
 	private static final Logger log = LoggerFactory.getLogger(BTMilkHtmlParser.class);
+	
+	public static final String guolvStr = "btmilk";
 	
 	public MagnetUl parseList(String html) {
 		MagnetUl mu = new MagnetUl();
@@ -95,6 +98,31 @@ public class BTMilkHtmlParser implements HtmlParser{
 			md.setAliveDate(aliveDate);
 			md.setFileNumber(fileNumber);
 			md.setHrefUrl(hrefUrl);
+		}
+		if(elements1 != null && elements1.size() >= 5){
+			List<DetailFile> fileList = Lists.newArrayList();
+			Element container5 = elements1.get(4);
+			Elements fileListElement = container5.select("table[class=table table-striped]").select("tr");
+			if(fileListElement != null && fileListElement.size() > 1){
+				int tmpSize = fileListElement.size()-1;
+				for (int i = 1; i < tmpSize; i++) {
+					Element eachTr = fileListElement.get(i);
+					Elements tds  = eachTr.select("td");
+					if(tds != null && tds.size() >= 2){
+						DetailFile df = new DetailFile();
+						String fileName = tds.get(0).text();
+						String fileSize = tds.get(1).text();
+						df.setFileName(fileName);
+						df.setFileSize(fileSize);
+						fileList.add(df);
+					}
+				}
+				DetailFile df = new DetailFile();
+				df.setFileName("biubiuq影视搜索（www.biubiuq.cn）");
+				df.setFileSize("biubiuq.cn");
+				fileList.add(df);
+			}
+			md.setFileList(fileList);
 		}
 		return md;
 	}

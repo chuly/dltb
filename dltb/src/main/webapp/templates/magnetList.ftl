@@ -7,9 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="author" content="">
 	<meta name="keywords" content="磁力链 磁力键 Magnet BTIH 电驴 ED2K KAD 种子 Torrent P2PSearch xunlei 迅雷 thunder QQ旋风 uTorrent BT 115 360 btdigg">
-	<meta name="description" content="磁力集中营(www.xxxx.com)最稳定最好用的BT磁力搜索引擎。界面清爽、无弹出广告。搜索质量高，检索内容稳定增长。">	
+	<meta name="description" content="磁力集中营(${this_yuming})最稳定最好用的BT磁力搜索引擎。界面清爽、无弹出广告。搜索质量高，检索内容稳定增长。">	
     <link rel="icon" href="/favicon.ico">
-    <title>${keyWord}-磁力湾(www.xxxx.com)-磁力链搜索</title>
+    <title>${keyWord}-磁力资源库(${this_yuming})-磁力链搜索</title>
     <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="${base_addr}/static/css/v1.css" rel="stylesheet">

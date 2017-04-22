@@ -17,7 +17,6 @@
 		<spring-data-commons.version>1.10.0.RELEASE</spring-data-commons.version>
 		<spring-data-commons-core.version>1.8.0.RELEASE</spring-data-commons-core.version>
 		<!-- json -->
-		<fastjson.version>1.2.5</fastjson.version>
 		<jackson.version>2.5.3</jackson.version>
 		<jackson-core-asl.version>1.9.13</jackson-core-asl.version>
 		<jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>

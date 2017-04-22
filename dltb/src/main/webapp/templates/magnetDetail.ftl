@@ -20,16 +20,55 @@
 			.table_noborder-right{text-ALIGN:left;width:60%}
 			.button_hs{width:80px !important; margin-top:5px; border-radius:4px;height:30px; border-radius: 0.5em;color:#fff;background:#a63d95;border:0px solid #07F}			
 		</style> 
-        <script type="text/javascript" src="http://webcache.zixunhai.com/webcdn/js.v1/jquery.min.js">
-        </script>           
-        <script type="text/javascript" src="http://webcache.zixunhai.com/webcdn/js.v1/jquery.form.js">
-        </script>        
-        <script type="text/javascript" src="http://webcache.zixunhai.com/webcdn/js/jquery.cookie.js">
-        </script>                       
-        <script type="text/javascript" src="http://webcache.zixunhai.com/webcdn/js/URLParser.js"></script>
+        <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js" />
+        <script type="text/javascript" src="http://webcache.zixunhai.com/webcdn/js/jquery.cookie.js" />
+        <script type="text/javascript" src="http://webcache.zixunhai.com/webcdn/js/URLParser.js" />
 		<script type="text/javascript" src="http://webcache.zixunhai.com/webcdn/bower_components/clipboard/dist/clipboard.min.js"></script>
 	</head>
 	<body>
+	<div style="position:fixed;bottom:0;right:0;_position:absolute;width:300px;height:250px;border:0px solid green;background:#ffffff;padding:10px;">
+		<!-- 广告位：磁力detail右下 -->
+		<script type="text/javascript">
+		        document.write('<a style="display:none!important" id="tanx-a-mm_122721099_22898693_75734265"></a>');
+		        tanx_s = document.createElement("script");
+		        tanx_s.type = "text/javascript";
+		        tanx_s.charset = "gbk";
+		        tanx_s.id = "tanx-s-mm_122721099_22898693_75734265";
+		        tanx_s.async = true;
+		        tanx_s.src = "http://p.tanx.com/ex?i=mm_122721099_22898693_75734265";
+		        tanx_h = document.getElementsByTagName("head")[0];
+		        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+		</script>
+	</div>
+	<div style="position:fixed;bottom:260;right:0;_position:absolute;width:120px;height:240px;border:0px solid green;background:#ffffff;padding:10px;">
+		<!-- cilidetail对联 -->
+		<script type="text/javascript">
+	        document.write('<a style="display:none!important" id="tanx-a-mm_122721099_22898693_75694069"></a>');
+	        tanx_s = document.createElement("script");
+	        tanx_s.type = "text/javascript";
+	        tanx_s.charset = "gbk";
+	        tanx_s.id = "tanx-s-mm_122721099_22898693_75694069";
+	        tanx_s.async = true;
+	        tanx_s.src = "http://p.tanx.com/ex?i=mm_122721099_22898693_75694069";
+	        tanx_h = document.getElementsByTagName("head")[0];
+	        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+		</script>
+	</div>
+	<div style="position:fixed;bottom:0;left:0;_position:absolute;width:300px;height:250px;border:0px solid green;background:#ffffff;padding:10px;">
+		<!-- cilidetai左下 -->
+		<script type="text/javascript">
+	        document.write('<a style="display:none!important" id="tanx-a-mm_122721099_22898693_75606400"></a>');
+	        tanx_s = document.createElement("script");
+	        tanx_s.type = "text/javascript";
+	        tanx_s.charset = "gbk";
+	        tanx_s.id = "tanx-s-mm_122721099_22898693_75606400";
+	        tanx_s.async = true;
+	        tanx_s.src = "http://p.tanx.com/ex?i=mm_122721099_22898693_75606400";
+	        tanx_h = document.getElementsByTagName("head")[0];
+	        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+		</script>
+	</div>
+	
 		<div class="container jhfkk" style="background-color:#fff;padding:0px;width:100%">
             <div style="width:100%;text-align:left；margin:auto;background-color:#bd081c;color:#fff;padding:10px">
                 <a href="${base_addr}/mag/search" style="color:#fff">>> 磁力资源库 >></a>
@@ -60,22 +99,29 @@
                 <br/>            
             </div>
             <br/>
-            <br/>
-            <div>
-            	<script>
-(function() {
-    var s = "_" + Math.random().toString(36).slice(2);
-    document.write('<div id="' + s + '"></div>');
-    (window.slotbydup=window.slotbydup || []).push({
-        id: '3443202',
-        container: s,
-        size: '460,60',
-        display: 'inlay-fix'
-    });
-})();
-</script>
-<script src="http://dup.baidustatic.com/js/os.js"></script>
-            </div>
+			若下载失败，请下载迅雷最新版 [<a href="http://down.sandai.net/thunder9/Thunder9.1.28.676.exe">点击下载迅雷</a>]
+            <br><br>
+            <div style="width:70%">
+            	<table class="table table-striped" >
+            		<#if md.fileList??>
+					<tr>
+						<th colspan="1">
+							<span>文件列表</span>
+						</th>
+						<th colspan="1">
+							<span>文件大小</span>
+						</th>
+					</tr>
+					<#list md.fileList as s>
+					<tr>
+						<td>${s.fileName?if_exists}</td>
+						<td>${s.fileSize?if_exists}</td>
+					</tr>
+					</#list>
+					</#if>
+				</table>
+			</div>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <div style="width:100%;text-align:center;margin:auto">
             	<span> </span><br/><span style="display:none">&copy; 2017 磁力资源库 www.biubiuq.online </span>
 				

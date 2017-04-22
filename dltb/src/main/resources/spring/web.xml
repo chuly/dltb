@@ -42,6 +42,7 @@
 <!-- 				<entry key="base_addr" value="http://127.0.0.1:8080"></entry> -->
 <!-- 				<entry key="base_addr" value="http://www.biubiuq.online/dltb"></entry> -->
 				<entry key="base_addr" value="${base_addr}"></entry>
+				<entry key="this_yuming" value="${this_yuming}"></entry>
 			</map>
 		</property>
 	</bean>

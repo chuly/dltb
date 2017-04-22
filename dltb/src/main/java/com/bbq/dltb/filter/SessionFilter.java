@@ -3,6 +3,8 @@ package com.bbq.dltb.filter;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -30,7 +32,7 @@ import com.bbq.dltb.service.AccessLogService;
 public class SessionFilter implements Filter {
 
 	private static final Logger log = LoggerFactory.getLogger(SessionFilter.class);
-	org.springframework.context.ApplicationContext f =null;
+	private static ExecutorService threadPool = Executors.newFixedThreadPool(2);
 	@Autowired
 	private AccessLogService accessLogService;
 
@@ -81,14 +83,19 @@ public class SessionFilter implements Filter {
 		if(uri.indexOf("/dltb/static/") >= 0){
 			return;
 		}
-		AccessLog accessLog = new AccessLog();
+		final AccessLog accessLog = new AccessLog();
 		accessLog.setAccessDate(new Date());
 		accessLog.setCostTime(timeMs.intValue());
 		accessLog.setIp(IpUtil.getIpAddr(httpRequest));
 //		accessLog.setRemark(remark);
 		accessLog.setResUri(uri);
 		accessLog.setParam(JSON.toJSONString(httpRequest.getParameterMap()));
-		accessLogService.insertAccessLog(accessLog);
+		threadPool.submit(new Thread(){
+			public void run() {
+				accessLogService.insertAccessLog(accessLog);
+			}
+		});
+		
 	}
 
 	public void destroy() {

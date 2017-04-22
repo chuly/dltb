@@ -1,14 +1,26 @@
 package com.bbq.dltb.common.htmlparse.bean;
 
+import java.util.List;
+
 public class MagnetDetail {
 	private String name;// 资源名
-	private String createDate;//创建一起
-	private String fileSize;//文件大小
-	private String linkSpeed;//链接速度
-	private String aliveDate;//活跃日期
-	private String fileNumber;//文件数
-	private String seedHash;//种子哈希
-	private String hrefUrl;//下载地址
+	private String createDate;// 创建一起
+	private String fileSize;// 文件大小
+	private String linkSpeed;// 链接速度
+	private String aliveDate;// 活跃日期
+	private String fileNumber;// 文件数
+	private String seedHash;// 种子哈希
+	private String hrefUrl;// 下载地址
+
+	private List<DetailFile> fileList;
+
+	public List<DetailFile> getFileList() {
+		return fileList;
+	}
+
+	public void setFileList(List<DetailFile> fileList) {
+		this.fileList = fileList;
+	}
 
 	public String getName() {
 		return name;
